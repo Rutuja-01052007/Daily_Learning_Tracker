@@ -1,0 +1,8 @@
+path: /kaggle/working/civicfix_road_damage
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: pothole
+  1: road_crack
+  2: manhole

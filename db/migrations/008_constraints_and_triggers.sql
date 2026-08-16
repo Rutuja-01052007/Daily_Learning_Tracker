@@ -1,5 +1,5 @@
 -- Migration: 008_constraints_and_triggers
--- Description: Creates database trigger functions and triggers to enforce workflow automation and integrity.
+-- Description: Creates trigger functions for timestamps, status logging, audit mutation logging, and append-only enforcement.
 
 -- 1. Function and Triggers for automatically updating `updated_at` timestamps
 CREATE OR REPLACE FUNCTION update_updated_at_column()
@@ -27,7 +27,6 @@ DECLARE
     v_changed_by UUID;
     v_remarks TEXT;
 BEGIN
-    -- Read session variable if available
     BEGIN
         v_changed_by := NULLIF(current_setting('app.current_user_id', true), '')::UUID;
     EXCEPTION WHEN OTHERS THEN
@@ -40,7 +39,7 @@ BEGIN
             issue_id,
             previous_status,
             new_status,
-            changed_by,
+            changed_by_user_id,
             remarks
         ) VALUES (
             NEW.id,
@@ -55,7 +54,7 @@ BEGIN
             issue_id,
             previous_status,
             new_status,
-            changed_by,
+            changed_by_user_id,
             remarks
         ) VALUES (
             NEW.id,

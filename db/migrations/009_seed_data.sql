@@ -1,5 +1,5 @@
 -- Migration: 009_seed_data
--- Description: Seeds reference data for roles, issue categories, departments, department category preferences, skills, and workflow states.
+-- Description: Seeds system static configuration reference records.
 
 -- 1. Insert System Roles
 INSERT INTO roles (id, name, description) VALUES
@@ -28,10 +28,10 @@ ON CONFLICT (id) DO NOTHING;
 
 -- 3. Insert Severity Levels
 INSERT INTO severity_levels (id, weight, description) VALUES
-('LOW', 10, 'Minor aesthetic or low-risk issue. No danger to traffic or life.'),
-('MEDIUM', 20, 'Moderate damage or issue causing inconvenience, potential risk over time.'),
-('HIGH', 30, 'High risk. Structural damage, traffic blockage, or outage of important services.'),
-('CRITICAL', 40, 'Extreme risk. High likelihood of injury, vehicle damage, or structural failure.')
+('LOW', 10, 'Minor aesthetic or low-risk issue.'),
+('MEDIUM', 20, 'Moderate damage or issue causing inconvenience.'),
+('HIGH', 30, 'High risk. Structural damage or traffic blockage.'),
+('CRITICAL', 40, 'Emergency response required.')
 ON CONFLICT (id) DO NOTHING;
 
 -- 4. Insert Priority Levels
@@ -63,52 +63,41 @@ ON CONFLICT (id) DO NOTHING;
 -- 7. Insert Issue Relationship Types
 INSERT INTO relationship_types (id, description) VALUES
 ('DUPLICATE', 'Report or issue duplicates an existing canonical issue.'),
-('RELATED', 'Issue is physically near or logically linked to another issue, but not a duplicate.'),
-('MERGED', 'Issue is merged into another issue (reports transferred).'),
+('RELATED', 'Issue is physically near or logically linked to another issue.'),
+('MERGED', 'Issue is merged into another issue.'),
 ('SPLIT', 'Issue was wrongly merged/grouped and split into its own issue.')
 ON CONFLICT (id) DO NOTHING;
 
--- 8. Insert Issue Categories (Fixed UUIDs for reference mapping)
-INSERT INTO issue_categories (id, name, code, description) VALUES
-('11111111-1111-1111-1111-111111111101', 'Pothole', 'pothole', 'Potholes or damage on the street surface.'),
-('11111111-1111-1111-1111-111111111102', 'Damaged Road', 'damaged_road', 'Cracks, erosion, sinkholes, or large sections of damaged pavement.'),
-('11111111-1111-1111-1111-111111111103', 'Broken Streetlight', 'streetlight', 'Dark or malfunctioning streetlights.'),
-('11111111-1111-1111-1111-111111111104', 'Overflowing Garbage', 'garbage', 'Garbage bins overflowing, illegal waste dumps.'),
-('11111111-1111-1111-1111-111111111105', 'Water Leakage', 'water_leakage', 'Burst pipes, water mains leaking clean water on public streets.'),
-('11111111-1111-1111-1111-111111111106', 'Blocked Drain', 'blocked_drain', 'Stormwater drains blocked with debris, flooding streets.'),
-('11111111-1111-1111-1111-111111111107', 'Fallen Tree', 'fallen_tree', 'Trees or branches blocking roads, sidewalks, or power lines.'),
-('11111111-1111-1111-1111-111111111108', 'Infrastructure Damage', 'infrastructure_damage', 'Damaged public benches, fences, bus stops, or bridges.'),
-('11111111-1111-1111-1111-111111111109', 'Illegal Dumping', 'illegal_dumping', 'Unauthorized dumping of trash or hazardous materials.'),
-('11111111-1111-1111-1111-111111111110', 'Other', 'other', 'Civic issues not covered by existing categories.')
+-- 8. Insert Issue Categories (Fixed UUIDs)
+INSERT INTO issue_categories (id, code, name, description) VALUES
+('11111111-1111-1111-1111-111111111101', 'pothole', 'Pothole', 'Potholes or damage on the street surface.'),
+('11111111-1111-1111-1111-111111111102', 'damaged_road', 'Damaged Road', 'Cracks, erosion, sinkholes, or damaged pavement.'),
+('11111111-1111-1111-1111-111111111103', 'streetlight', 'Broken Streetlight', 'Dark or malfunctioning streetlights.'),
+('11111111-1111-1111-1111-111111111104', 'garbage', 'Overflowing Garbage', 'Garbage bins overflowing, illegal waste dumps.'),
+('11111111-1111-1111-1111-111111111105', 'water_leakage', 'Water Leakage', 'Burst pipes, water mains leaking clean water.'),
+('11111111-1111-1111-1111-111111111106', 'blocked_drain', 'Blocked Drain', 'Stormwater drains blocked with debris.'),
+('11111111-1111-1111-1111-111111111107', 'fallen_tree', 'Fallen Tree', 'Trees or branches blocking roads or power lines.'),
+('11111111-1111-1111-1111-111111111108', 'infrastructure_damage', 'Infrastructure Damage', 'Damaged public benches, fences, bus stops, or bridges.'),
+('11111111-1111-1111-1111-111111111109', 'illegal_dumping', 'Illegal Dumping', 'Unauthorized dumping of trash or hazardous materials.'),
+('11111111-1111-1111-1111-111111111110', 'other', 'Other', 'Civic issues not covered by existing categories.')
 ON CONFLICT (id) DO NOTHING;
 
--- 9. Insert Departments (Fixed UUIDs for reference mapping)
-INSERT INTO departments (id, name, code, description) VALUES
-('22222222-2222-2222-2222-222222222201', 'Department of Public Works', 'DPW', 'Handles road repairs, potholes, and physical infrastructure.'),
-('22222222-2222-2222-2222-222222222202', 'Department of Sanitation', 'DSN', 'Handles garbage collection, waste bins, and illegal dumping cleanups.'),
-('22222222-2222-2222-2222-222222222203', 'Department of Water & Power', 'DWP', 'Handles municipal water supply, streetlights, and electrical problems.'),
-('22222222-2222-2222-2222-222222222204', 'Department of Parks & Recreation', 'DPR', 'Handles fallen trees, vegetation clearance, and public parks.')
+-- 9. Insert Departments (Fixed UUIDs)
+INSERT INTO departments (id, code, name, description) VALUES
+('22222222-2222-2222-2222-222222222201', 'ROAD_MAINT', 'Road Maintenance', 'Handles road repairs, potholes, and physical pavement.'),
+('22222222-2222-2222-2222-222222222202', 'SANITATION', 'Sanitation', 'Handles garbage collection, waste bins, and illegal dumping.'),
+('22222222-2222-2222-2222-222222222203', 'ELECTRICAL', 'Electrical', 'Handles municipal power, streetlights, and electrical problems.'),
+('22222222-2222-2222-2222-222222222204', 'WATER_SUPPLY', 'Water Supply', 'Handles municipal water supply and water main leaks.'),
+('22222222-2222-2222-2222-222222222205', 'DRAINAGE', 'Drainage', 'Handles stormwater drains, culverts, and flood prevention.'),
+('22222222-2222-2222-2222-222222222206', 'PARKS', 'Parks', 'Handles fallen trees, vegetation clearance, and public parks.'),
+('22222222-2222-2222-2222-222222222207', 'EMERGENCY', 'Emergency Services', 'Handles high priority emergency hazards.')
 ON CONFLICT (id) DO NOTHING;
 
--- 10. Map Departments to Issue Categories
-INSERT INTO department_categories (department_id, category_id, is_preferred) VALUES
-('22222222-2222-2222-2222-222222222201', '11111111-1111-1111-1111-111111111101', true),  -- DPW -> Pothole
-('22222222-2222-2222-2222-222222222201', '11111111-1111-1111-1111-111111111102', true),  -- DPW -> Damaged Road
-('22222222-2222-2222-2222-222222222201', '11111111-1111-1111-1111-111111111108', true),  -- DPW -> Infrastructure Damage
-('22222222-2222-2222-2222-222222222202', '11111111-1111-1111-1111-111111111104', true),  -- DSN -> Garbage
-('22222222-2222-2222-2222-222222222202', '11111111-1111-1111-1111-111111111109', true),  -- DSN -> Illegal Dumping
-('22222222-2222-2222-2222-222222222202', '11111111-1111-1111-1111-111111111106', true),  -- DSN -> Blocked Drain (Shared)
-('22222222-2222-2222-2222-222222222203', '11111111-1111-1111-1111-111111111103', true),  -- DWP -> Streetlight
-('22222222-2222-2222-2222-222222222203', '11111111-1111-1111-1111-111111111105', true),  -- DWP -> Water Leakage
-('22222222-2222-2222-2222-222222222204', '11111111-1111-1111-1111-111111111107', true)   -- DPR -> Fallen Tree
-ON CONFLICT ON CONSTRAINT pk_department_categories DO NOTHING;
-
--- 11. Insert Worker Skills
+-- 10. Insert Worker Skills
 INSERT INTO skills (id, name, description) VALUES
-('33333333-3333-3333-3333-333333333301', 'asphalt_paving', 'Pavement surfacing, pothole filling, asphalt mixing and rolling.'),
-('33333333-3333-3333-3333-333333333302', 'electrical_wiring', 'Repairing municipal high-voltage wires, changing streetlights.'),
-('33333333-3333-3333-3333-333333333303', 'plumbing_welding', 'Welding and repairing municipal water pipes, mains leaks fix.'),
-('33333333-3333-3333-3333-333333333304', 'chainsaw_operation', 'Felling damaged trees, branches pruning, safety management.'),
-('33333333-3333-3333-3333-333333333305', 'heavy_machinery', 'Operating excavators, backhoes, and road rollers.'),
-('33333333-3333-3333-3333-333333333306', 'waste_sorting', 'Handling garbage collection, sorting hazardous chemicals.')
+('33333333-3333-3333-3333-333333333301', 'pothole_repair', 'Pothole filling, asphalt mixing, compaction.'),
+('33333333-3333-3333-3333-333333333302', 'road_repair', 'Pavement resurfacing, road grading.'),
+('33333333-3333-3333-3333-333333333303', 'drainage_maintenance', 'Clearing storm drains, culvert repair.'),
+('33333333-3333-3333-3333-333333333304', 'electrical_wiring', 'Repairing municipal high-voltage lines, streetlights.'),
+('33333333-3333-3333-3333-333333333305', 'chainsaw_operation', 'Felling damaged trees, branch pruning.')
 ON CONFLICT (id) DO NOTHING;
