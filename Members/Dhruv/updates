@@ -4,9 +4,9 @@ NEXT:     integration
 BLOCKED:  nowhere 
 
 after 45 min
-DONE:
-DOING:
-NEXT:
-BLOCKED:
+DONE:frontend run on local rebuilt into structured war
+DOING:connecting front back and data a
+NEXT: api integration
+BLOCKED: databased not recieved yet
 
 after 45 min
