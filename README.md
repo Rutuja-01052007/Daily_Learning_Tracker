@@ -181,8 +181,8 @@ The issue status is updated throughout its lifecycle.
 | ------------------ | ------------- |
 | 🖥️ Frontend       | React.js, HTML5, CSS3, JavaScript, Vite |
 | ⚙️ Backend         | To be updated |
-| 🗄️ Database       | SQL           |
-| 🤖 AI / ML         | To be updated |
+| 🗄️ Database       |PostgreSQL, PostGIS, Supabase/Neon, pgAdmin/DBeaver, SQL + Mermaid ER          |
+| 🤖 AI / ML         |YOLOv8, Kaggle Notebooks, Kaggle Datasets, best.pt |
 | 🎨 UI / UX         | Figma |
 | 🔧 Version Control | Git & GitHub  |
 
