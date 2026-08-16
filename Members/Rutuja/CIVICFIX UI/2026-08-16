@@ -16,3 +16,12 @@
 - Continue developing the CIVICFIX interface.
 - Improve the UI and responsiveness.
 - Start implementing the next features.
+
+## Technologies used:
+
+Figma — Used to design the CIVICFIX UI/UX, create user flows, wireframes, and high-fidelity screens for Citizens, Authorities, and Workers.
+React.js — Used to build the frontend as reusable and interactive components.
+HTML5 — Used to structure the application's pages and UI elements.
+CSS3 — Used for styling, layouts, spacing, typography, and responsive design.
+JavaScript — Used to implement frontend interactions and dynamic behavior.
+Vite — Used as the frontend development and build tool for faster developement.
