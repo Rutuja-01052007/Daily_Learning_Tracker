@@ -180,7 +180,7 @@ The issue status is updated throughout its lifecycle.
 | Category           | Technology    |
 | ------------------ | ------------- |
 | 🖥️ Frontend       | React.js, HTML5, CSS3, JavaScript, Vite |
-| ⚙️ Backend         | To be updated |
+| ⚙️ Backend         |Node.js + Express + PostgreSQL + PostGIS + AI Service + External APIs |
 | 🗄️ Database       |PostgreSQL, PostGIS, Supabase/Neon, pgAdmin/DBeaver, SQL + Mermaid ER          |
 | 🤖 AI / ML         |YOLOv8, Kaggle Notebooks, Kaggle Datasets, best.pt |
 | 🎨 UI / UX         | Figma |
