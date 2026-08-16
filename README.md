@@ -179,11 +179,11 @@ The issue status is updated throughout its lifecycle.
 
 | Category           | Technology    |
 | ------------------ | ------------- |
-| 🖥️ Frontend       | To be updated |
+| 🖥️ Frontend       | React.js, HTML5, CSS3, JavaScript, Vite |
 | ⚙️ Backend         | To be updated |
 | 🗄️ Database       | SQL           |
 | 🤖 AI / ML         | To be updated |
-| 🎨 UI / UX         | To be updated |
+| 🎨 UI / UX         | Figma |
 | 🔧 Version Control | Git & GitHub  |
 
 > Technology details will be updated as individual modules are finalized.
@@ -227,9 +227,9 @@ The project currently contains separate SQL modules for different parts of the s
 | Member      | Role                               |
 | ----------- | ---------------------------------- |
 | **Dipeeka** | Product Management & Documentation |
-| **Dhruv**   | Development                        |
-| **Onkar**   | Development                        |
-| **Rutuja**  | Development / UI                   |
+| **Dhruv**   | Backend                         |
+| **Onkar**   | AI/ML Database                        |
+| **Rutuja**  | UI/UX                   |
 
 > Team responsibilities may evolve as the project develops.
 
@@ -262,7 +262,7 @@ The product management process focuses on keeping the project structured, aligne
 | Initial Project Structure | ✅ Completed    |
 | Database Planning         | 🔄 In Progress |
 | AI Module                 | 🔄 In Progress |
-| UI Development            | 🔄 In Progress |
+| UI Development            | ✅ Complete |
 | Backend Development       | ⏳ Upcoming     |
 | Module Integration        | ⏳ Upcoming     |
 | Testing                   | ⏳ Upcoming     |
