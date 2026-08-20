@@ -1,434 +1,515 @@
-CivicFix AI — Project Documentation
+🚨 CivicFix AI
+
+AI-Powered Civic Issue Reporting, Analysis & Management Platform
+
+«CivicFix AI is an AI-assisted platform that helps citizens report civic issues and enables municipal authorities to analyze, prioritize, and manage those issues more efficiently.»
+
+---
+
+📑 Table of Contents
+
+- "1. Project Overview" (#1-project-overview)
+- "2. Problem Statement" (#2-problem-statement)
+- "3. Proposed Solution" (#3-proposed-solution)
+- "4. Objectives" (#4-objectives)
+- "5. Key Features" (#5-key-features)
+- "6. System Workflow" (#6-system-workflow)
+- "7. AI Processing" (#7-ai-processing)
+- "8. Human-in-the-Loop Decision Making" (#8-human-in-the-loop-decision-making)
+- "9. System Architecture" (#9-system-architecture)
+- "10. Technology Stack" (#10-technology-stack)
+- "11. User Roles" (#11-user-roles)
+- "12. Database & Data Management" (#12-database--data-management)
+- "13. Testing" (#13-testing)
+- "14. Advantages" (#14-advantages)
+- "15. Limitations" (#15-limitations)
+- "16. Future Scope" (#16-future-scope)
+- "17. Project Status" (#17-project-status)
+- "18. Team" (#18-team)
+- "19. Conclusion" (#19-conclusion)
+
+---
 
 1. Project Overview
 
-CivicFix AI is an AI-assisted civic issue reporting and management platform designed to improve the way municipal authorities receive, analyze, prioritize, and manage public complaints.
+CivicFix AI is an AI-assisted civic issue management platform designed to improve the process of reporting, analyzing, prioritizing, and managing public complaints.
 
-Citizens can report civic issues such as damaged roads, potholes, garbage accumulation, drainage problems, streetlight issues, and other public infrastructure problems.
+Citizens can report problems such as:
 
-The system uses AI to assist municipal authorities by analyzing reported issues, identifying possible duplicate complaints, estimating severity, and assigning a priority level.
+- 🛣️ Potholes and damaged roads
+- 🗑️ Garbage accumulation
+- 💧 Drainage and water-related issues
+- 💡 Streetlight problems
+- 🏗️ Damaged public infrastructure
+- 📍 Other civic issues
 
-The final decision remains with the municipal authorities. AI is used as a decision-support system and does not independently make administrative decisions.
+The platform uses AI to assist authorities with issue analysis, duplicate detection, severity estimation, and priority assessment.
+
+«Important: AI does not make the final administrative decision. Municipal authorities review the AI-generated analysis and make the final decision.»
 
 ---
 
 2. Problem Statement
 
-Traditional civic complaint systems can face several challenges:
+Traditional civic complaint systems face several challenges:
 
-- Large numbers of complaints can be difficult to manage.
-- Similar complaints may be submitted multiple times.
-- Authorities may have difficulty identifying the most urgent issues.
-- Manual complaint analysis can consume significant time.
-- Important complaints may not receive attention quickly enough.
-- Citizens may have limited visibility into the status of their complaints.
+Problem| Impact
+Large number of complaints| Difficult to manage manually
+Duplicate complaints| Repeated reports create unnecessary workload
+Lack of prioritization| Critical issues may not receive immediate attention
+Manual analysis| Requires significant time and effort
+Limited information| Authorities may struggle to understand issue severity
+Poor complaint organization| Difficult to track issues efficiently
 
-CivicFix AI aims to provide an organized and intelligent system for handling these challenges.
+There is a need for an intelligent system that can assist authorities in organizing and analyzing civic complaints efficiently.
 
 ---
 
 3. Proposed Solution
 
-CivicFix AI connects citizens and municipal authorities through a centralized civic issue management platform.
-
-The basic workflow is:
-
-Report → Detect → Verify → Prioritize → Assign → Resolve → Track
-
-When a citizen submits a complaint, the system analyzes the available information and provides useful insights to municipal authorities.
-
-The authority can then review the AI-generated analysis and make the final decision regarding the complaint.
-
----
-
-4. Key Features
-
-4.1 Civic Issue Reporting
-
-Citizens can submit information about civic problems through the platform.
-
-Examples include:
-
-- Potholes
-- Damaged roads
-- Garbage accumulation
-- Drainage issues
-- Streetlight problems
-- Other public infrastructure issues
-
----
-
-4.2 AI-Based Issue Analysis
-
-The system analyzes submitted complaints and provides information that can help municipal authorities understand the reported issue.
-
-The AI analysis can assist with:
-
-- Issue identification
-- Severity estimation
-- Priority assessment
-- Duplicate complaint detection
-
----
-
-4.3 Duplicate Detection
-
-Multiple citizens may report the same civic problem.
-
-CivicFix AI attempts to identify similar or duplicate complaints so that municipal authorities can understand whether multiple reports refer to the same underlying issue.
-
-This can reduce unnecessary repetition and help authorities manage complaints more efficiently.
-
----
-
-4.4 Severity Estimation
-
-The system provides an estimated severity level for a reported issue.
-
-Severity helps authorities understand the potential seriousness of a complaint and supports better prioritization.
-
-The AI-generated severity is an assistive result and can be reviewed by municipal authorities.
-
----
-
-4.5 Priority Assessment
-
-CivicFix AI generates a priority assessment to help authorities identify complaints that may require faster attention.
-
-Priority can assist authorities in organizing their workload and focusing on important civic issues.
-
----
-
-4.6 Authority Verification
-
-AI does not replace municipal authorities.
-
-The AI analysis is presented to the authority through the management interface. Authorities can review the reported issue and its AI-generated analysis before making the final decision.
-
-If the authority believes that the AI-generated priority or severity does not accurately represent the situation, the authority can make the appropriate decision.
-
----
-
-4.7 Complaint Management
-
-Municipal authorities can manage reported civic issues through a centralized system.
-
-The workflow supports the movement of complaints from reporting and analysis toward resolution and tracking.
-
----
-
-5. System Workflow
-
-Step 1 — Citizen Reports an Issue
-
-A citizen submits a civic complaint through the platform.
-
-Step 2 — Issue Analysis
-
-The submitted information is processed by the system.
-
-Step 3 — Duplicate Analysis
-
-The system checks whether the complaint may be related to previously reported issues.
-
-Step 4 — Severity Estimation
-
-The system estimates the severity of the reported problem.
-
-Step 5 — Priority Assessment
-
-The system generates a priority level to assist municipal authorities.
-
-Step 6 — Authority Review
-
-The municipal authority reviews the complaint and AI-generated analysis.
-
-Step 7 — Action
-
-The authority decides how the issue should be handled.
-
-Step 8 — Resolution and Tracking
-
-The complaint can progress toward resolution and its status can be tracked.
-
----
-
-6. Role of Artificial Intelligence
-
-AI is used as an assistance layer within CivicFix.
-
-The AI does not independently approve, reject, or resolve civic complaints.
-
-Instead, it provides analytical information such as:
-
-AI Output| Purpose
-Issue Analysis| Helps understand the reported problem
-Duplicate Detection| Identifies potentially similar complaints
-Severity| Estimates seriousness
-Priority| Helps organize urgency
-
-The municipal authority remains responsible for the final decision.
-
----
-
-7. Human-in-the-Loop Decision Making
-
-A major principle of CivicFix AI is human-in-the-loop decision making.
-
-The system follows:
-
-Citizen Report → AI Analysis → Authority Review → Final Decision
-
-This approach prevents the system from blindly relying on AI-generated results.
-
-Municipal authorities can review the available information and use their judgment before taking action.
-
----
-
-8. System Architecture
-
-The platform can be understood through the following logical layers:
-
-Citizen Layer
-
-Citizens submit and track civic complaints.
-
-Application Layer
-
-The application receives complaints and manages the civic issue workflow.
-
-AI Analysis Layer
-
-The AI processing layer assists with:
-
-- Issue analysis
-- Duplicate detection
-- Severity estimation
-- Priority assessment
-
-Database Layer
-
-The database stores information required for managing complaints and workflow.
-
-Authority Layer
-
-Municipal authorities review complaints, examine AI analysis, and take appropriate action.
-
----
-
-9. Data Flow
-
-The general data flow is:
-
-Citizen Input
-
-↓
-
-Complaint Submission
-
-↓
-
-Issue Processing
-
-↓
-
-AI Analysis
-
-↓
-
-Duplicate Detection + Severity + Priority
-
-↓
-
-Municipal Authority Dashboard
-
-↓
-
-Authority Verification
-
-↓
-
+CivicFix AI provides a centralized platform connecting citizens and municipal authorities.
+
+The system follows the workflow:
+
+Citizen Report
+      ↓
+Issue Analysis
+      ↓
+Duplicate Detection
+      ↓
+Severity Assessment
+      ↓
+Priority Assessment
+      ↓
+Authority Dashboard
+      ↓
+Human Verification
+      ↓
 Action / Resolution
-
-↓
-
+      ↓
 Status Tracking
 
----
-
-10. Database
-
-CivicFix uses structured database components to manage the application's data and workflow.
-
-The database is responsible for storing information required by the system, such as complaint records and workflow-related information.
-
-SQL modules are organized as part of the project's database implementation.
+The platform provides AI-generated insights while keeping the final decision under human authority.
 
 ---
 
-11. Technology Stack
+4. Objectives
 
-The final technology stack should reflect the technologies actually used in the implemented prototype.
+1. Simplify civic issue reporting for citizens.
 
-Component| Technology
-Frontend| [Add actual technology]
-Backend| [Add actual technology]
-Database| SQL / [Actual database]
-AI/ML| [Add actual model/library]
-APIs| [Add actual APIs if used]
-Development Tools| [Add actual tools]
-Version Control| GitHub
+2. Use AI to analyze reported issues and provide useful insights.
 
-Important: Replace the bracketed items with the technologies actually implemented by your team.
+3. Detect potentially duplicate complaints and reduce repeated work.
+
+4. Assist authorities with severity and priority assessment for better complaint management.
 
 ---
 
-12. User Roles
+5. Key Features
 
-Citizen
+👤 Citizen Features
 
-The citizen can:
-
-- Report civic problems
-- Provide complaint information
+- Submit civic complaints
+- Provide issue details
+- Upload relevant information/images where supported
 - Track submitted complaints
+- View complaint status
 
-Municipal Authority
+🤖 AI Features
 
-The authority can:
+- Issue analysis
+- Duplicate complaint detection
+- Severity estimation
+- Priority assessment
+- AI-generated explanation of results
 
-- View reported issues
+🏛️ Authority Features
+
+- Centralized complaint dashboard
+- View reported civic issues
 - Review AI analysis
-- Examine duplicate information
+- Check duplicate reports
 - Review severity and priority
 - Verify complaints
-- Take administrative decisions
+- Take appropriate action
 - Track issue resolution
 
 ---
 
-13. Advantages
+6. System Workflow
 
-CivicFix AI provides several potential benefits:
+Step 1 — Report
 
-1. Faster organization of civic complaints.
-2. Assistance in identifying duplicate reports.
-3. AI-assisted severity and priority assessment.
-4. Better visibility for municipal authorities.
-5. Human verification before final decisions.
-6. More structured complaint management.
-7. Improved tracking of civic issues.
+A citizen submits information about a civic issue.
 
----
+Step 2 — Process
 
-14. Limitations
+The system receives and processes the submitted information.
 
-The AI-generated analysis may not always perfectly represent the real-world situation.
+Step 3 — Analyze
 
-Factors such as incomplete information, inaccurate reports, or unusual situations can affect AI analysis.
+AI analyzes the available complaint information.
 
-Therefore, CivicFix is designed as a decision-support platform rather than a fully autonomous decision-making system.
+Step 4 — Detect Duplicates
 
-Municipal authorities remain responsible for reviewing information and making the final decision.
+The system checks whether similar complaints may already exist.
 
----
+Step 5 — Estimate Severity
 
-15. Future Scope
+The system provides an estimated severity level.
 
-Possible future improvements include:
+Step 6 — Assess Priority
 
-- Improved AI models for civic issue classification.
-- More advanced geographic analysis.
-- Integration with municipal systems.
-- Real-time notifications.
-- Advanced analytics and reporting.
-- Improved complaint tracking.
-- Mobile application support.
-- More advanced duplicate detection.
-- Historical data-based prediction of recurring civic problems.
+The system generates a priority assessment to assist authorities.
 
-Future features should be implemented only after validating their feasibility and requirements.
+Step 7 — Authority Review
+
+Municipal authorities review the complaint and AI-generated results.
+
+Step 8 — Final Decision
+
+The authority decides what action should be taken.
+
+Step 9 — Resolution
+
+The issue moves toward resolution and its status can be tracked.
 
 ---
 
-16. Testing
+7. AI Processing
 
-The system should be tested using different civic complaint scenarios.
+CivicFix AI uses an AI-assisted processing layer to support municipal authorities.
 
-Important testing areas include:
+AI Processing Pipeline
 
-- Complaint submission
-- Data validation
-- Duplicate detection
-- Severity estimation
-- Priority assessment
-- Dashboard functionality
-- Database operations
-- Complaint status management
-- Authority verification workflow
+        Citizen Complaint
+               ↓
+        Data Preprocessing
+               ↓
+        ┌───────────────────┐
+        │    AI Analysis    │
+        └───────────────────┘
+               ↓
+      ┌────────┼─────────┐
+      ↓        ↓         ↓
+  Duplicate  Severity  Priority
+  Detection  Analysis  Assessment
+      └────────┼─────────┘
+               ↓
+        Authority Dashboard
+               ↓
+        Human Verification
 
-Testing should use representative test cases to verify that the implemented functionality behaves as expected.
+AI Outputs
 
----
-
-17. Conclusion
-
-CivicFix AI provides an AI-assisted approach to civic issue management by helping municipal authorities analyze, organize, and prioritize citizen complaints.
-
-The platform combines citizen reporting, AI-assisted analysis, duplicate detection, severity estimation, priority assessment, and authority verification into a unified workflow.
-
-The most important principle of the system is that AI assists the municipal authority rather than replacing human decision-making.
-
-By providing structured information and analytical support, CivicFix AI aims to help authorities manage civic complaints more efficiently and make better-informed decisions.
-
----
-
-18. Project Status
-
-Current Status: Hackathon Prototype
-
-The implemented features and technologies should be evaluated according to the current prototype available in the repository.
+Output| Purpose
+Issue Analysis| Helps understand the reported problem
+Duplicate Detection| Identifies potentially related complaints
+Severity| Estimates the seriousness of an issue
+Priority| Helps organize the urgency of complaints
+Explanation| Provides understandable reasoning behind AI results
 
 ---
 
-19. Team
+8. Human-in-the-Loop Decision Making
 
-Project: CivicFix AI
+A key principle of CivicFix AI is Human-in-the-Loop AI.
 
-Team Members:
+The system does not blindly rely on AI.
 
-- [Member 1]
-- [Member 2]
-- [Member 3]
-- [Member 4]
-- [Member 5]
-- [Member 6]
+Instead:
 
----
+Citizen
+   ↓
+Complaint
+   ↓
+AI Analysis
+   ↓
+Authority Review
+   ↓
+Final Decision
 
-20. Repository Structure
+The AI provides recommendations and analytical information.
 
-CivicFix/
-│
-├── README.md
-├── Documentation.md
-├── requirements.txt
-│
-├── database/
-├── db/
-├── scripts/
-├── Members/
-│
-└── [Other project files]
+The municipal authority reviews the information and makes the final administrative decision.
 
-The repository structure may change as development progresses.
+This approach helps maintain human oversight, accountability, and practical decision-making.
 
 ---
 
-21. Disclaimer
+9. System Architecture
 
-CivicFix AI is an AI-assisted prototype developed for hackathon purposes.
+The platform can be divided into several logical layers.
+
+┌──────────────────────────────┐
+│       CITIZEN INTERFACE      │
+│   Report & Track Complaints  │
+└──────────────┬───────────────┘
+               ↓
+┌──────────────────────────────┐
+│       APPLICATION LAYER      │
+│ Complaint & Workflow Mgmt.   │
+└──────────────┬───────────────┘
+               ↓
+┌──────────────────────────────┐
+│        AI ANALYSIS LAYER     │
+│ Duplicate | Severity |       │
+│ Priority | Issue Analysis    │
+└──────────────┬───────────────┘
+               ↓
+┌──────────────────────────────┐
+│        DATABASE LAYER        │
+│ Complaint & User Information │
+└──────────────┬───────────────┘
+               ↓
+┌──────────────────────────────┐
+│     AUTHORITY DASHBOARD      │
+│ Review → Verify → Take Action│
+└──────────────────────────────┘
+
+«📌 Replace this text diagram with your actual architecture image when your team finalizes the system architecture.»
+
+---
+
+10. Technology Stack
+
+«⚠️ Update this table according to the technologies actually used by your team. Do not claim technologies that are not implemented.»
+
+Layer| Technology
+Frontend| "[Actual Frontend Technology]"
+Backend| "[Actual Backend Technology]"
+Database| "[Actual Database]"
+AI / ML| "[Actual AI/ML Technology]"
+APIs| "[Actual APIs]"
+Development Tools| "[Actual Tools]"
+Version Control| Git & GitHub
+
+---
+
+11. User Roles
+
+👤 Citizen
+
+Citizens can:
+
+- Report civic issues
+- Submit relevant information
+- View complaint details
+- Track complaint status
+
+🏛️ Municipal Authority
+
+Authorities can:
+
+- View reported complaints
+- Review AI-generated analysis
+- Examine duplicate information
+- Review severity
+- Review priority
+- Verify complaints
+- Take appropriate action
+- Track resolution
+
+---
+
+12. Database & Data Management
+
+The database stores information required to operate the civic issue management system.
+
+Depending on the implemented system, stored information may include:
+
+Data Category| Example
+User Information| Citizen / authority details
+Complaint Information| Issue description and category
+Location Information| Reported issue location
+AI Results| Severity, priority, duplicate analysis
+Status| Pending, reviewed, resolved, etc.
+Timestamps| Submission and update times
+
+«⚠️ Update this section based on the actual database schema implemented by your developers.»
+
+---
+
+13. Testing
+
+The system should be tested across different civic issue scenarios.
+
+Functional Testing
+
+- [ ] Complaint submission
+- [ ] Complaint validation
+- [ ] AI analysis
+- [ ] Duplicate detection
+- [ ] Severity assessment
+- [ ] Priority assessment
+- [ ] Authority dashboard
+- [ ] Status management
+- [ ] Database operations
+
+Example Test Cases
+
+Test Case| Expected Result
+Submit valid complaint| Complaint is successfully recorded
+Submit incomplete complaint| System provides validation
+Submit similar complaint| System identifies potential duplication
+Analyze severe issue| Higher severity is indicated
+Authority reviews complaint| AI results are displayed
+Update complaint status| New status is stored correctly
+
+---
+
+14. Advantages
+
+⚡ Faster Complaint Analysis
+
+AI can assist authorities in analyzing large numbers of complaints.
+
+🔍 Duplicate Detection
+
+Similar complaints can be identified to reduce repeated processing.
+
+🎯 Better Prioritization
+
+Priority assessment helps authorities organize complaints according to urgency.
+
+👨‍💼 Human Oversight
+
+Authorities remain responsible for the final decision.
+
+📊 Centralized Management
+
+Complaints and analytical information can be viewed through a unified platform.
+
+🔄 Improved Tracking
+
+The system supports tracking of complaints through the resolution process.
+
+---
+
+15. Limitations
+
+The accuracy of AI analysis depends on the quality and completeness of the information provided.
+
+Potential limitations include:
+
+- Incorrect or incomplete citizen reports
+- AI prediction errors
+- Limited training data
+- Unusual real-world situations
+- Dependence on available system data
+- Need for human verification
+
+Therefore, AI-generated results should be treated as decision-support information rather than final decisions.
+
+---
+
+16. Future Scope
+
+The platform can be extended with:
+
+- 📍 Advanced geographic analysis
+- 📱 Dedicated mobile application
+- 🔔 Real-time notifications
+- 🧠 Improved AI models
+- 📊 Advanced analytics dashboards
+- 🏛️ Integration with municipal systems
+- 📈 Historical-data-based issue prediction
+- 🗺️ Geographic visualization of civic problems
+- 🔄 Improved duplicate detection
+- 📡 Real-time civic infrastructure monitoring
+
+Roadmap
+
+Current Prototype
+       ↓
+Improved AI Analysis
+       ↓
+Advanced Analytics
+       ↓
+Municipal System Integration
+       ↓
+Real-Time Civic Monitoring
+       ↓
+Smart City Scale Platform
+
+---
+
+17. Project Status
+
+Project Type: Hackathon Prototype
+
+Current Stage: Prototype / Demonstration
+
+The project is being developed to demonstrate an AI-assisted approach to civic issue reporting and municipal complaint management.
+
+The final feature set and technology stack should be considered according to the implementation available in this repository.
+
+---
+
+18. Team
+
+CivicFix AI Team
+
+Member| Role
+"[Member 1]"| "[Role]"
+"[Member 2]"| "[Role]"
+"[Member 3]"| "[Role]"
+"[Member 4]"| "[Role]"
+"[Member 5]"| "[Role]"
+"[Member 6]"| "[Role]"
+
+---
+
+19. Screenshots
+
+Add screenshots of the actual implemented application below.
+
+🏠 Home / Landing Page
+
+"Home Page" (screenshots/home.png)
+
+📝 Complaint Reporting
+
+"Complaint Reporting" (screenshots/report.png)
+
+🏛️ Authority Dashboard
+
+"Authority Dashboard" (screenshots/dashboard.png)
+
+📊 AI Analysis
+
+"AI Analysis" (screenshots/analysis.png)
+
+«📌 Make sure the image filenames and folder paths exactly match your GitHub repository.»
+
+---
+
+20. Conclusion
+
+CivicFix AI provides an AI-assisted approach to civic issue management by connecting citizen reporting with intelligent complaint analysis and municipal authority review.
+
+The platform assists with:
+
+Reporting → Analysis → Duplicate Detection → Severity → Priority → Authority Review → Resolution
+
+The key principle of CivicFix AI is:
+
+«AI assists the authority; AI does not replace the authority.»
+
+By combining AI-assisted analysis with human decision-making, CivicFix AI aims to make civic complaint management more organized, efficient, and responsive.
+
+---
+
+⚠️ Important Disclaimer
+
+CivicFix AI is a hackathon prototype.
 
 AI-generated analysis is intended to support municipal authorities and should not be treated as an independent final administrative decision.
 
 Final decisions remain under the responsibility of authorized municipal authorities.
+
+---
+
+📌 Repository
+
+This repository contains the source code, documentation, database components, scripts, and other resources required for the CivicFix AI prototype.
