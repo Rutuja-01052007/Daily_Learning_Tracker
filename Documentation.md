@@ -67,31 +67,26 @@ There is a need for an intelligent system that can assist authorities in organiz
 
 3. Proposed Solution
 
-CivicFix AI provides a centralized platform connecting citizens and municipal authorities.
+```mermaid
+flowchart TD
+    A["👤 Citizen Report"] --> B["🤖 Issue Analysis"]
+    B --> C["🔍 Duplicate Detection"]
+    C --> D["⚠️ Severity Assessment"]
+    D --> E["📊 Priority Assessment"]
+    E --> F["🏛️ Authority Dashboard"]
+    F --> G["👨‍💼 Human Verification"]
+    G --> H["✅ Action / Resolution"]
+    H --> I["📍 Status Tracking"]
 
-The system follows the workflow:
+    B -.-> J["AI-Generated Insights"]
+    C -.-> J
+    D -.-> J
+    E -.-> J
 
-Citizen Report
-      ↓
-Issue Analysis
-      ↓
-Duplicate Detection
-      ↓
-Severity Assessment
-      ↓
-Priority Assessment
-      ↓
-Authority Dashboard
-      ↓
-Human Verification
-      ↓
-Action / Resolution
-      ↓
-Status Tracking
+    J -.-> G
 
-The platform provides AI-generated insights while keeping the final decision under human authority.
-
----
+    K["Human Authority<br/>Final Decision"] --> G
+```
 
 4. Objectives
 
@@ -138,43 +133,21 @@ The platform provides AI-generated insights while keeping the final decision und
 
 6. System Workflow
 
-Step 1 — Report
+```mermaid
+flowchart TD
+    A["Step 1 - Report"] --> B["Step 2 - Process"]
+    B --> C["Step 3 - Analyze"]
+    C --> D["Step 4 - Detect Duplicates"]
+    D --> E["Step 5 - Estimate Severity"]
+    E --> F["Step 6 - Assess Priority"]
+    F --> G["Step 7 - Authority Review"]
+    G --> H["Step 8 - Final Decision"]
+    H --> I["Step 9 - Resolution"]
 
-A citizen submits information about a civic issue.
+    classDef grey fill:#f2f2f2,stroke:#555555,stroke-width:1px,color:#222222;
 
-Step 2 — Process
-
-The system receives and processes the submitted information.
-
-Step 3 — Analyze
-
-AI analyzes the available complaint information.
-
-Step 4 — Detect Duplicates
-
-The system checks whether similar complaints may already exist.
-
-Step 5 — Estimate Severity
-
-The system provides an estimated severity level.
-
-Step 6 — Assess Priority
-
-The system generates a priority assessment to assist authorities.
-
-Step 7 — Authority Review
-
-Municipal authorities review the complaint and AI-generated results.
-
-Step 8 — Final Decision
-
-The authority decides what action should be taken.
-
-Step 9 — Resolution
-
-The issue moves toward resolution and its status can be tracked.
-
----
+    class A,B,C,D,E,F,G,H,I grey;
+```
 
 7. AI Processing
 
