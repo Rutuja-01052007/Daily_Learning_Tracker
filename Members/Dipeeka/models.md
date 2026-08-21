@@ -1,32 +1,40 @@
-# TrustFusion AI — Proposed AI Models
+# 🔍 Recommended GitHub Repositories for TrustFusion AI
 
-We can use **three pretrained AI models** for the core multimodal analysis of TrustFusion AI.
+## 🥇 SpoorthyM-2024/phishing-detection-system
+**Platform / URL Module**
 
-| Modality | Model | What it does | Why we can use it |
-|---|---|---|---|
-| 📝 Text | **SCAMBERT (DistilBERT)** | Detects scam/fraud/phishing language | Lightweight and specifically suited for scam-related text classification |
-| 🎙️ Voice | **AASIST / AASIST-L** | Detects potentially synthetic/spoofed speech | Specifically designed for audio anti-spoofing |
-| 🎥 Video | **Xception** | Detects potential deepfake/manipulation patterns | Established deepfake-detection architecture and suitable for pretrained inference |
+Useful as a complete reference for building our **Platform/URL module** because it includes detection logic, feature extraction, API/backend structure, and explainable results.
 
-## How They Work Together
+---
 
-```mermaid
-flowchart LR
-    A["Investment Communication"] --> B["Text"]
-    A --> C["Voice"]
-    A --> D["Video"]
+## 🥈 kashishhMehra/phishing-url-detection
+**Explainability Module**
 
-    B --> E["SCAMBERT"]
-    C --> F["AASIST-L"]
-    D --> G["Xception"]
+Useful as a reference for **explainable phishing detection**, especially processing URL features and showing users **why a URL was classified as risky**.
 
-    E --> H["Text Risk"]
-    F --> I["Voice Risk"]
-    G --> J["Video Risk"]
+---
 
-    H --> K["Evidence Fusion"]
-    I --> K
-    J --> K
+## 🥉 mlvanguards/fraud-audio-detection
+**Voice Analysis Module**
 
-    K --> L["Overall Risk"]
-    L --> M["Explainable Result"]
+Useful as a starting repository for our **Voice Analysis module**, including audio preprocessing, model inference, and a practical fraud-audio detection workflow.
+
+---
+
+## 4️⃣ ishal1410/deepfake-detection-faceforensics
+**Video Analysis Module**
+
+Useful as a starting repository for our **Video Analysis module**, providing an existing deepfake-detection workflow around video/frame processing instead of building everything from scratch.
+
+---
+
+## 🎯 How They Fit TrustFusion
+
+| Repository | TrustFusion Module | Main Purpose |
+|---|---|---|
+| 🥇 SpoorthyM | Platform / URL | Fake trading platform detection |
+| 🥈 kashishhMehra | Explainability | Explain why a URL is risky |
+| 🥉 mlvanguards | Voice | Fraud / manipulated audio analysis |
+| 4️⃣ ishal1410 | Video | Deepfake video analysis |
+
+> **These repositories are reference/start points. We will adapt suitable components into our own TrustFusion architecture rather than simply copying complete projects.**
